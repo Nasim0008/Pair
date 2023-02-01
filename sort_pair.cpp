@@ -2,8 +2,8 @@
 using namespace std;
 int main()
 {
-    int n;
-    cin >> n;
+    int n,k;
+    cin >>n>>k;
     vector<pair<int, int>> v;
     for (int i = 0; i < n; i++)
     {
@@ -11,16 +11,19 @@ int main()
         cin >> a >> b;
         v.push_back({a, b});
     }
+    sort(v.rbegin(),v.rend());
 
     for (int i = 0; i < n; i++)
     {
-        v[i].first *= -1;
+        v[i].second*= -1;
     }
 
-    sort(v.begin(), v.end());
+   //sort(v.begin(), v.end());
+
+    cout<<endl;
     for (auto u : v)
     {
-        cout << abs(u.first) << " " << u.second << endl;
+        cout << (u.first) << " " << abs(u.second) << endl;
     }
     cout << endl;
 }
